@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora HPSR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f9e2b5 0%, #f5d9a6 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #491100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            background-color: #fdf6e3;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(73, 17, 0, 0.2);
+            overflow: hidden;
+            border: 1px solid #e8d5b5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
+            color: #f9e2b5;
+            padding: 25px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(249, 226, 181, 0.1) 0%, rgba(249, 226, 181, 0) 70%);
+            transform: rotate(30deg);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            position: relative;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            position: relative;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 25px;
+            background-color: #fef9ec;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(73, 17, 0, 0.1);
+            border-left: 5px solid #491100;
+        }
+        
+        h2 {
+            color: #491100;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 2px solid #e8d5b5;
+            padding-bottom: 10px;
+        }
+
+        h2 i {
+            color: #491100;
+        }
+        
+        .convenio-options {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .convenio-option {
+            padding: 12px 20px;
+            background-color: #f9e2b5;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            font-weight: 600;
+            border: 2px solid #e8d5b5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            color: #491100;
+        }
+        
+        .convenio-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(73, 17, 0, 0.15);
+            border-color: #491100;
+        }
+        
+        .convenio-option.active {
+            background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
+            color: #f9e2b5;
+            border-color: #491100;
+        }
+
+        .convenio-option i {
+            font-size: 1.2rem;
+        }
+
+        .desconto-info {
+            font-size: 0.85rem;
+            margin-top: 5px;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        
+        .zerar-section {
+            background: linear-gradient(135deg, #f9e2b5 0%, #f5d9a6 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(73, 17, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid #e8d5b5;
+        }
+
+        .zerar-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: linear-gradient(to bottom, #491100, #3a0e00);
+        }
+        
+        .zerar-section h3 {
+            margin-bottom: 20px;
+            color: #491100;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .zerar-section h3 i {
+            color: #491100;
+        }
+        
+        .valor-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #491100;
+        }
+        
+        .valor-total {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #491100;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .convenio-aplicado {
+            font-style: italic;
+            background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
+            color: #f9e2b5;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(73, 17, 0, 0.3);
+        }
+        
+        .btn-zerar-tudo {
+            position: absolute;
+            right: 25px;
+            top: 25px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, #6b2a00 0%, #491100 100%);
+            color: #f9e2b5;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 10px rgba(73, 17, 0, 0.3);
+        }
+        
+        .btn-zerar-tudo:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(73, 17, 0, 0.4);
+            background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
+        }
+        
+        .produtos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .produto-card {
+            border: 1px solid #e8d5b5;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s;
+            background-color: #fef9ec;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .produto-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #491100, #6b2a00);
+            transform: scaleX(0);
+            transition: all 0.3s;
+        }
+
+        .produto-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .produto-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(73, 17, 0, 0.15);
+        }
+        
+        .produto-nome {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #491100;
+            font-size: 1.1rem;
+        }
+        
+        .produto-preco {
+            color: #491100;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .produto-controles {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+        
+        .quantidade {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: #f9e2b5;
+            padding: 5px;
+            border-radius: 8px;
+            border: 1px solid #e8d5b5;
+        }
+        
+        .btn-quantidade {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(135deg, #491100, #3a0e00);
+            color: #f9e2b5;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .btn-quantidade:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 8px rgba(73, 17, 0, 0.3);
+        }
+        
+        .quantidade-input {
+            width: 50px;
+            height: 32px;
+            text-align: center;
+            border: 1px solid #e8d5b5;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #491100;
+            background-color: #fef9ec;
+        }
+        
+        .quantidade-input:focus {
+            outline: none;
+            border-color: #491100;
+            box-shadow: 0 0 0 2px rgba(73, 17, 0, 0.2);
+        }
+        
+        .btn-zerar {
+            padding: 8px 15px;
+            background: linear-gradient(135deg, #6b2a00, #491100);
+            color: #f9e2b5;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .btn-zerar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(73, 17, 0, 0.3);
+            background: linear-gradient(135deg, #491100, #3a0e00);
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
+            color: #f9e2b5;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .produto-card {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .produtos-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+            
+            .convenio-options {
+                flex-direction: column;
+            }
+            
+            .valor-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .btn-zerar-tudo {
+                position: static;
+                margin-top: 15px;
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .produtos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-calculator"></i> Calculadora HPSR</h1>
+            <p>Calcule facilmente os valores dos produtos com descontos de convênio</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2><i class="fas fa-handshake"></i> Convênio do Cliente:</h2>
+                <div class="convenio-options">
+                    <div class="convenio-option active" data-convenio="sem">
+                        <i class="fas fa-times-circle"></i>
+                        <span>Sem Convênio</span>
+                        <div class="desconto-info">Sem desconto</div>
+                    </div>
+                    <div class="convenio-option" data-convenio="plano">
+                        <i class="fas fa-file-contract"></i>
+                        <span>Plano Médico</span>
+                        <div class="desconto-info">20% de desconto</div>
+                    </div>
+                    <div class="convenio-option" data-convenio="parceria">
+                        <i class="fas fa-star"></i>
+                        <span>Parceria</span>
+                        <div class="desconto-info">15% de desconto</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="zerar-section">
+                <h3><i class="fas fa-percentage"></i> Zerar Juros</h3>
+                <button class="btn-zerar-tudo" id="btn-zerar-tudo">
+                    <i class="fas fa-broom"></i> Zerar Tudo
+                </button>
+                <div class="valor-info">
+                    <div>Valor total da compra</div>
+                    <div>Convênio Aplicado:</div>
+                </div>
+                <div class="valor-info">
+                    <div class="valor-total">R$ 0,00</div>
+                    <div class="convenio-aplicado">Sem Convênio</div>
+                </div>
+            </div>
+            
+            <h2><i class="fas fa-pills"></i> Produtos</h2>
+            <div class="produtos-grid" id="produtos-grid">
+                <!-- Produtos serão inseridos via JavaScript -->
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Calculadora HPSR &copy; 2023 - Todos os direitos reservados</p>
+        </div>
+    </div>
+
+    <script>
+        // Dados dos produtos com id estável (sem espaços)
+        const produtos = [
+            { id: 'p0', nome: "Cirurgias", preco: 20000000 },
+            { id: 'p1', nome: "Fert in vitro", preco: 10000000 },
+            { id: 'p2', nome: "Consultas", preco: 5000000 },
+            { id: 'p3', nome: "Adrenalina", preco: 78000 },
+            { id: 'p4', nome: "Kit Médico", preco: 230000 },
+            { id: 'p5', nome: "Bandagem", preco: 30000 },
+            { id: 'p6', nome: "Analgésico", preco: 55000 },
+            { id: 'p7', nome: "Atadura", preco: 55000 },
+            { id: 'p8', nome: "Ritmoneary", preco: 55000 },
+            { id: 'p9', nome: "Sinkalmy", preco: 80000 },
+            { id: 'p10', nome: "Tratamento", preco: 180000 },
+            { id: 'p11', nome: "Exames basicos", preco: 250000 },
+            { id: 'p12', nome: "Exames de Imagem", preco: 300000 },
+            { id: 'p13', nome: "Queimaduras/Gesso", preco: 250000 }
+        ];
+
+        // Elementos DOM
+        const produtosGrid = document.getElementById('produtos-grid');
+        const convenioOptions = document.querySelectorAll('.convenio-option');
+        const valorTotalElement = document.querySelector('.valor-total');
+        const convenioAplicadoElement = document.querySelector('.convenio-aplicado');
+        const btnZerarTudo = document.getElementById('btn-zerar-tudo');
+        
+        // Estado da aplicação usando ids estáveis
+        let carrinho = {};
+        let convenioAtual = 'sem';
+        
+        // Inicializar carrinho por id
+        produtos.forEach(produto => {
+            carrinho[produto.id] = 0;
+        });
+        
+        // Renderizar produtos (usa produto.id para ids/data-attributes)
+        function renderizarProdutos() {
+            produtosGrid.innerHTML = '';
+            
+            produtos.forEach((produto, index) => {
+                const produtoCard = document.createElement('div');
+                produtoCard.className = 'produto-card';
+                produtoCard.style.animationDelay = `${index * 0.05}s`;
+                
+                produtoCard.innerHTML = `
+                    <div class="produto-nome">${produto.nome}</div>
+                    <div class="produto-preco">R$ ${formatarPreco(produto.preco)}</div>
+                    <div class="produto-controles">
+                        <div class="quantidade">
+                            <button class="btn-quantidade diminuir" data-produto-id="${produto.id}" aria-label="Diminuir ${produto.nome}">-</button>
+                            <input type="number" class="quantidade-input" id="quantidade-${produto.id}" value="0" min="0" data-produto-id="${produto.id}" aria-label="Quantidade de ${produto.nome}">
+                            <button class="btn-quantidade aumentar" data-produto-id="${produto.id}" aria-label="Aumentar ${produto.nome}">+</button>
+                        </div>
+                        <button class="btn-zerar" data-produto-id="${produto.id}" aria-label="Zerar ${produto.nome}">
+                            <i class="fas fa-eraser"></i> Zerar
+                        </button>
+                    </div>
+                `;
+                
+                produtosGrid.appendChild(produtoCard);
+            });
+            
+            adicionarEventListeners();
+        }
+        
+        function adicionarEventListeners() {
+            document.querySelectorAll('.aumentar').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-produto-id');
+                    carrinho[id]++;
+                    atualizarQuantidade(id);
+                    calcularTotal();
+                });
+            });
+            
+            document.querySelectorAll('.diminuir').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-produto-id');
+                    if (carrinho[id] > 0) {
+                        carrinho[id]--;
+                        atualizarQuantidade(id);
+                        calcularTotal();
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.btn-zerar').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-produto-id');
+                    carrinho[id] = 0;
+                    atualizarQuantidade(id);
+                    calcularTotal();
+                });
+            });
+            
+            // Adicionar event listeners para os campos de entrada
+            document.querySelectorAll('.quantidade-input').forEach(input => {
+                input.addEventListener('input', () => {
+                    const id = input.getAttribute('data-produto-id');
+                    let valor = parseInt(input.value) || 0;
+                    
+                    // Garantir que o valor não seja negativo
+                    if (valor < 0) {
+                        valor = 0;
+                        input.value = 0;
+                    }
+                    
+                    carrinho[id] = valor;
+                    calcularTotal();
+                });
+                
+                // Adicionar evento para quando o campo perde o foco
+                input.addEventListener('blur', () => {
+                    const id = input.getAttribute('data-produto-id');
+                    let valor = parseInt(input.value) || 0;
+                    
+                    // Garantir que o valor não seja negativo
+                    if (valor < 0) {
+                        valor = 0;
+                        input.value = 0;
+                    }
+                    
+                    carrinho[id] = valor;
+                    atualizarQuantidade(id);
+                    calcularTotal();
+                });
+            });
+        }
+        
+        function atualizarQuantidade(id) {
+            const elemento = document.getElementById(`quantidade-${id}`);
+            if (elemento) {
+                elemento.value = carrinho[id];
+            }
+        }
+        
+        function calcularTotal() {
+            let total = 0;
+            produtos.forEach(produto => {
+                const quantidade = carrinho[produto.id] || 0;
+                total += produto.preco * quantidade;
+            });
+            
+            let desconto = 0;
+            let textoConvenio = '';
+            switch(convenioAtual) {
+                case 'plano':
+                    desconto = 0.2;
+                    textoConvenio = 'Plano Médico';
+                    break;
+                case 'parceria':
+                    desconto = 0.15;
+                    textoConvenio = 'Parceria';
+                    break;
+                default:
+                    desconto = 0;
+                    textoConvenio = 'Sem Convênio';
+            }
+            
+            total = total * (1 - desconto);
+            if (isNaN(total)) total = 0;
+            
+            valorTotalElement.textContent = `R$ ${formatarPreco(total)}`;
+            convenioAplicadoElement.textContent = textoConvenio;
+        }
+        
+        function formatarPreco(preco) {
+            if (isNaN(preco) || preco === null || preco === undefined) preco = 0;
+            return (preco / 100).toLocaleString('pt-BR', {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+        }
+        
+        function zerarTudo() {
+            produtos.forEach(produto => {
+                carrinho[produto.id] = 0;
+                atualizarQuantidade(produto.id);
+            });
+            
+            convenioOptions.forEach(opt => opt.classList.remove('active'));
+            convenioOptions[0].classList.add('active');
+            convenioAtual = 'sem';
+            
+            calcularTotal();
+        }
+        
+        renderizarProdutos();
+        calcularTotal();
+        
+        convenioOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                convenioOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+                convenioAtual = option.getAttribute('data-convenio');
+                calcularTotal();
+            });
+        });
+        
+        btnZerarTudo.addEventListener('click', zerarTudo);
+    </script>
+</body>
+</html>
