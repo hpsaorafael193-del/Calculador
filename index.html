@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background: linear-gradient(135deg, #f9e2b5 0%, #f5d9a6 100%);
             min-height: 100vh;
@@ -22,7 +23,7 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .container {
             width: 100%;
             max-width: 1200px;
@@ -32,7 +33,7 @@
             overflow: hidden;
             border: 1px solid #e8d5b5;
         }
-        
+
         .header {
             background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
             color: #f9e2b5;
@@ -40,6 +41,17 @@
             text-align: center;
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
 
         .header::before {
@@ -52,29 +64,29 @@
             background: radial-gradient(circle, rgba(249, 226, 181, 0.1) 0%, rgba(249, 226, 181, 0) 70%);
             transform: rotate(30deg);
         }
-        
+
         h1 {
             font-size: 2.5rem;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
             font-weight: 700;
             position: relative;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .nav-container {
             background: linear-gradient(135deg, #3a0e00 0%, #2a0a00 100%);
             padding: 15px 30px;
             border-bottom: 3px solid #f9e2b5;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
-        
+
         .nav-principal {
             display: flex;
             justify-content: center;
             gap: 20px;
             flex-wrap: wrap;
         }
-        
+
         .nav-btn {
             padding: 12px 25px;
             background: linear-gradient(135deg, rgba(249, 226, 181, 0.15) 0%, rgba(249, 226, 181, 0.05) 100%);
@@ -91,22 +103,22 @@
             font-size: 1rem;
             text-align: center;
         }
-        
+
         .nav-btn:hover {
             background: linear-gradient(135deg, rgba(249, 226, 181, 0.3) 0%, rgba(249, 226, 181, 0.2) 100%);
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
             border-color: #f9e2b5;
         }
-        
+
         .nav-btn i {
             font-size: 1.2rem;
         }
-        
+
         .content {
             padding: 30px;
         }
-        
+
         .section {
             margin-bottom: 30px;
             padding: 25px;
@@ -115,7 +127,7 @@
             box-shadow: 0 4px 15px rgba(73, 17, 0, 0.1);
             border-left: 5px solid #491100;
         }
-        
+
         h2 {
             color: #491100;
             margin-bottom: 20px;
@@ -130,13 +142,13 @@
         h2 i {
             color: #491100;
         }
-        
+
         .convenio-options {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
         }
-        
+
         .convenio-option {
             padding: 15px 20px;
             background: linear-gradient(135deg, #f9e2b5 0%, #f5d9a6 100%);
@@ -155,7 +167,7 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(73, 17, 0, 0.1);
         }
-        
+
         .convenio-option::before {
             content: '';
             position: absolute;
@@ -167,24 +179,24 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-        
+
         .convenio-option:hover::before {
             opacity: 1;
         }
-        
+
         .convenio-option:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(73, 17, 0, 0.2);
             border-color: #491100;
         }
-        
+
         .convenio-option.active {
             background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
             color: #f9e2b5;
             border-color: #491100;
             box-shadow: 0 8px 20px rgba(73, 17, 0, 0.3), 0 0 0 2px rgba(249, 226, 181, 0.3);
         }
-        
+
         .convenio-option.active::after {
             content: '';
             position: absolute;
@@ -196,14 +208,16 @@
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
             0% {
                 box-shadow: 0 0 0 0 rgba(249, 226, 181, 0.7);
             }
+
             70% {
                 box-shadow: 0 0 0 10px rgba(249, 226, 181, 0);
             }
+
             100% {
                 box-shadow: 0 0 0 0 rgba(249, 226, 181, 0);
             }
@@ -213,11 +227,11 @@
             font-size: 1.4rem;
             transition: transform 0.3s;
         }
-        
+
         .convenio-option:hover i {
             transform: scale(1.1);
         }
-        
+
         .convenio-option.active i {
             transform: scale(1.1);
         }
@@ -231,18 +245,18 @@
             border-radius: 12px;
             transition: all 0.3s;
         }
-        
+
         .convenio-option.active .desconto-info {
             background: rgba(249, 226, 181, 0.2);
             color: #f9e2b5;
         }
-        
+
         .combos-section {
             margin-top: 20px;
             padding-top: 20px;
             border-top: 2px solid #e8d5b5;
         }
-        
+
         .combos-title {
             font-size: 1.2rem;
             font-weight: 600;
@@ -252,13 +266,13 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .combos-options {
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
-        
+
         .combo-btn {
             padding: 12px 20px;
             background: linear-gradient(135deg, #8d6e63 0%, #6d4c41 100%);
@@ -279,7 +293,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .combo-btn::before {
             content: '';
             position: absolute;
@@ -291,27 +305,27 @@
             opacity: 0;
             transition: opacity 0.3s;
         }
-        
+
         .combo-btn:hover::before {
             opacity: 1;
         }
-        
+
         .combo-btn:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(73, 17, 0, 0.3);
             background: linear-gradient(135deg, #6d4c41 0%, #491100 100%);
         }
-        
+
         .combo-btn:active {
             transform: translateY(-2px);
         }
-        
+
         .combo-info {
             font-size: 0.8rem;
             opacity: 0.9;
             font-weight: normal;
         }
-        
+
         .zerar-section {
             background: linear-gradient(135deg, #f9e2b5 0%, #f5d9a6 100%);
             padding: 25px;
@@ -332,7 +346,7 @@
             height: 100%;
             background: linear-gradient(to bottom, #491100, #3a0e00);
         }
-        
+
         .zerar-section h3 {
             margin-bottom: 20px;
             color: #491100;
@@ -344,7 +358,7 @@
         .zerar-section h3 i {
             color: #491100;
         }
-        
+
         .valor-info {
             display: flex;
             justify-content: space-between;
@@ -352,14 +366,14 @@
             font-weight: 600;
             color: #491100;
         }
-        
+
         .valor-total {
             font-size: 1.8rem;
             font-weight: 700;
             color: #491100;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        
+
         .convenio-aplicado {
             font-style: italic;
             background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
@@ -369,7 +383,7 @@
             font-size: 0.9rem;
             box-shadow: 0 2px 5px rgba(73, 17, 0, 0.3);
         }
-        
+
         .btn-zerar-tudo {
             position: absolute;
             right: 25px;
@@ -387,22 +401,22 @@
             gap: 8px;
             box-shadow: 0 4px 10px rgba(73, 17, 0, 0.3);
         }
-        
+
         .btn-zerar-tudo:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(73, 17, 0, 0.4);
             background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
         }
-        
+
         .btn-zerar-tudo:active {
             transform: translateY(-2px);
         }
-        
+
         /* Estilos das abas */
         .abas-container {
             margin-top: 30px;
         }
-        
+
         .abas-botoes {
             display: flex;
             gap: 10px;
@@ -410,7 +424,7 @@
             border-bottom: 2px solid #e8d5b5;
             flex-wrap: wrap;
         }
-        
+
         .aba-botao {
             padding: 12px 25px;
             background: linear-gradient(135deg, #f9e2b5 0%, #f5d9a6 100%);
@@ -428,34 +442,34 @@
             justify-content: center;
             box-shadow: 0 4px 8px rgba(73, 17, 0, 0.1);
         }
-        
+
         .aba-botao:hover {
             background: linear-gradient(135deg, #f5d9a6 0%, #f0d09a 100%);
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(73, 17, 0, 0.15);
         }
-        
+
         .aba-botao.ativo {
             background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
             color: #f9e2b5;
             box-shadow: 0 4px 10px rgba(73, 17, 0, 0.3);
         }
-        
+
         .aba-conteudo {
             display: none;
             animation: fadeIn 0.5s ease;
         }
-        
+
         .aba-conteudo.ativo {
             display: block;
         }
-        
+
         .produtos-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             gap: 25px;
         }
-        
+
         .produto-card {
             border: 1px solid #e8d5b5;
             border-radius: 10px;
@@ -485,12 +499,12 @@
         .produto-card:hover::before {
             transform: scaleX(1);
         }
-        
+
         .produto-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(73, 17, 0, 0.15);
         }
-        
+
         .produto-imagem-container {
             width: 100px;
             height: 100px;
@@ -504,18 +518,18 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .produto-imagem {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.3s;
         }
-        
+
         .produto-card:hover .produto-imagem {
             transform: scale(1.05);
         }
-        
+
         .produto-nome {
             font-weight: 700;
             margin-bottom: 10px;
@@ -527,14 +541,14 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .produto-preco {
             color: #491100;
             margin-bottom: 10px;
             font-size: 1.3rem;
             font-weight: 700;
         }
-        
+
         .produto-controles {
             display: flex;
             justify-content: space-between;
@@ -542,7 +556,7 @@
             margin-top: 15px;
             width: 100%;
         }
-        
+
         .quantidade {
             display: flex;
             align-items: center;
@@ -552,7 +566,7 @@
             border-radius: 8px;
             border: 1px solid #e8d5b5;
         }
-        
+
         .btn-quantidade {
             width: 32px;
             height: 32px;
@@ -567,12 +581,12 @@
             transition: all 0.3s;
             font-weight: bold;
         }
-        
+
         .btn-quantidade:hover {
             transform: scale(1.1);
             box-shadow: 0 4px 8px rgba(73, 17, 0, 0.3);
         }
-        
+
         .quantidade-input {
             width: 50px;
             height: 32px;
@@ -583,21 +597,20 @@
             font-size: 1rem;
             color: #491100;
             background-color: #fef9ec;
-            -moz-appearance: textfield;
         }
-        
+
         .quantidade-input::-webkit-outer-spin-button,
         .quantidade-input::-webkit-inner-spin-button {
             -webkit-appearance: none;
             margin: 0;
         }
-        
+
         .quantidade-input:focus {
             outline: none;
             border-color: #491100;
             box-shadow: 0 0 0 2px rgba(73, 17, 0, 0.2);
         }
-        
+
         .btn-zerar {
             padding: 8px 15px;
             background: linear-gradient(135deg, #6b2a00, #491100);
@@ -611,7 +624,7 @@
             align-items: center;
             gap: 5px;
         }
-        
+
         .btn-zerar:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(73, 17, 0, 0.3);
@@ -629,8 +642,15 @@
 
         /* Animações */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .produto-card {
@@ -643,78 +663,82 @@
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .nav-btn {
                 width: 100%;
                 max-width: 250px;
                 justify-content: center;
             }
-            
+
             .produtos-grid {
                 grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
             }
-            
-            .convenio-options, .combos-options {
+
+            .convenio-options,
+            .combos-options {
                 grid-template-columns: 1fr;
             }
-            
+
             .valor-info {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .btn-zerar-tudo {
                 position: static;
                 margin-top: 15px;
                 width: 100%;
                 justify-content: center;
             }
-            
+
             .abas-botoes {
                 flex-direction: column;
             }
-            
-            .aba-botao, .combo-btn {
+
+            .aba-botao,
+            .combo-btn {
                 border-radius: 10px;
                 margin-bottom: 5px;
                 min-width: 100%;
             }
-            
+
             .produto-imagem-container {
                 width: 120px;
                 height: 120px;
             }
         }
-        
+
         @media (max-width: 480px) {
             .produtos-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .header {
                 padding: 20px 15px;
             }
-            
+
             h1 {
                 font-size: 2rem;
             }
-            
+
             .content {
                 padding: 15px;
             }
-            
+
             .nav-container {
                 padding: 10px 15px;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
-            <h1><i class="fas fa-calculator"></i> Sistema HPSR</h1>
+            <img src="Icones/logo.png" alt="Logo HPSR" class="logo-img">
+            <h1>Calculadora</h1>
         </div>
-        
+
         <div class="nav-container">
             <div class="nav-principal">
                 <a href="https://hpsaorafael193-del.github.io/ExamesSR/" target="_blank" class="nav-btn">
@@ -726,12 +750,12 @@
                 <a href="https://hpsaorafael193-del.github.io/Receita-1.0/" target="_blank" class="nav-btn">
                     <i class="fas fa-prescription"></i> Receita Médica
                 </a>
-                 <a href="https://hpsaorafael193-del.github.io/ReciboSR/" target="_blank" class="nav-btn">
+                <a href="https://hpsaorafael193-del.github.io/ReciboSR/" target="_blank" class="nav-btn">
                     <i class="fas fa-file-medical"></i> Recibos
                 </a>
             </div>
         </div>
-        
+
         <div class="content">
             <div class="section">
                 <h2><i class="fas fa-handshake"></i> Convênio do Cliente:</h2>
@@ -757,7 +781,7 @@
                         <div class="desconto-info">15% de desconto</div>
                     </div>
                 </div>
-                
+
                 <div class="combos-section">
                     <div class="combos-title">
                         <i class="fas fa-boxes"></i> Combos Especiais:
@@ -774,7 +798,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="zerar-section">
                 <h3><i class="fas fa-percentage"></i> Zerar Juros</h3>
                 <button class="btn-zerar-tudo" id="btn-zerar-tudo">
@@ -789,7 +813,7 @@
                     <div class="convenio-aplicado">Sem Convênio</div>
                 </div>
             </div>
-            
+
             <div class="abas-container">
                 <div class="abas-botoes">
                     <button class="aba-botao ativo" data-aba="medicamentos">
@@ -802,21 +826,21 @@
                         <i class="fas fa-paw"></i> Ursos HP
                     </button>
                 </div>
-                
+
                 <div class="aba-conteudo ativo" id="aba-medicamentos">
                     <h2><i class="fas fa-pills"></i> Medicamentos</h2>
                     <div class="produtos-grid" id="produtos-medicamentos">
                         <!-- Medicamentos serão inseridos via JavaScript -->
                     </div>
                 </div>
-                
+
                 <div class="aba-conteudo" id="aba-procedimentos">
                     <h2><i class="fas fa-procedures"></i> Procedimentos</h2>
                     <div class="produtos-grid" id="produtos-procedimentos">
                         <!-- Procedimentos serão inseridos via JavaScript -->
                     </div>
                 </div>
-                
+
                 <div class="aba-conteudo" id="aba-ursos-hp">
                     <h2><i class="fas fa-paw"></i> Ursos HP</h2>
                     <div class="produtos-grid" id="produtos-ursos-hp">
@@ -825,7 +849,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="footer">
             <p>Sistema HPSR &copy; 2025 - Todos os direitos reservados</p>
         </div>
@@ -892,16 +916,16 @@
         const abaBotoes = document.querySelectorAll('.aba-botao');
         const abaConteudos = document.querySelectorAll('.aba-conteudo');
         const convenioOptions = document.querySelectorAll('.convenio-option');
-        
+
         // Estado da aplicação
         let carrinho = {};
         let convenioAtual = 'sem';
-        
+
         // Inicializar carrinho para todos os produtos
         [...medicamentos, ...procedimentos, ...ursosHP].forEach(produto => {
             carrinho[produto.id] = 0;
         });
-        
+
         // Renderizar produtos por categoria
         function renderizarProdutos() {
             renderizarCategoria('medicamentos', medicamentos);
@@ -909,16 +933,16 @@
             renderizarCategoria('ursos-hp', ursosHP);
             adicionarEventListeners();
         }
-        
+
         function renderizarCategoria(tipo, produtos) {
             const container = document.getElementById(`produtos-${tipo}`);
             container.innerHTML = '';
-            
+
             produtos.forEach((produto, index) => {
                 const produtoCard = document.createElement('div');
                 produtoCard.className = 'produto-card';
                 produtoCard.style.animationDelay = `${index * 0.05}s`;
-                
+
                 produtoCard.innerHTML = `
                     <div class="produto-imagem-container">
                         <img src="${produto.imagem}" alt="${produto.nome}" class="produto-imagem" onerror="this.src='https://via.placeholder.com/150x150/f9e2b5/491100?text=${encodeURIComponent(produto.nome)}'">
@@ -936,11 +960,11 @@
                         </button>
                     </div>
                 `;
-                
+
                 container.appendChild(produtoCard);
             });
         }
-        
+
         function adicionarEventListeners() {
             // Botões de aumentar
             document.querySelectorAll('.aumentar').forEach(btn => {
@@ -953,7 +977,7 @@
                     }
                 });
             });
-            
+
             // Botões de diminuir
             document.querySelectorAll('.diminuir').forEach(btn => {
                 btn.addEventListener('click', (e) => {
@@ -965,7 +989,7 @@
                     }
                 });
             });
-            
+
             // Botões de zerar individual
             document.querySelectorAll('.btn-zerar').forEach(btn => {
                 btn.addEventListener('click', (e) => {
@@ -977,7 +1001,7 @@
                     }
                 });
             });
-            
+
             // Inputs de quantidade
             document.querySelectorAll('.quantidade-input').forEach(input => {
                 input.addEventListener('change', (e) => {
@@ -989,7 +1013,7 @@
                         calcularTotal();
                     }
                 });
-                
+
                 input.addEventListener('input', (e) => {
                     const id = e.target.getAttribute('data-produto-id');
                     if (id) {
@@ -1001,18 +1025,18 @@
                 });
             });
         }
-        
+
         function atualizarQuantidade(id) {
             const input = document.getElementById(`quantidade-${id}`);
             if (input) {
                 input.value = carrinho[id];
             }
         }
-        
+
         // Função para aplicar combo (SEM ALERTA)
         function aplicarCombo(tipoCombo) {
             const combo = combos[tipoCombo];
-            
+
             // Aplicar quantidades do combo
             combo.items.forEach(item => {
                 // Verificar se o item existe no carrinho
@@ -1021,40 +1045,40 @@
                     atualizarQuantidade(item.id);
                 }
             });
-            
+
             // Garantir que estamos na aba de medicamentos
             alternarAba('medicamentos');
-            
+
             // Recalcular total
             calcularTotal();
         }
-        
+
         function calcularTotal() {
             let total = 0;
-            
+
             // Calcular total de medicamentos
             medicamentos.forEach(produto => {
                 const quantidade = carrinho[produto.id] || 0;
                 total += produto.preco * quantidade;
             });
-            
+
             // Calcular total de procedimentos
             procedimentos.forEach(produto => {
                 const quantidade = carrinho[produto.id] || 0;
                 total += produto.preco * quantidade;
             });
-            
+
             // Calcular total de ursos HP
             ursosHP.forEach(produto => {
                 const quantidade = carrinho[produto.id] || 0;
                 total += produto.preco * quantidade;
             });
-            
+
             // Aplicar desconto
             let desconto = 0;
             let textoConvenio = '';
-            
-            switch(convenioAtual) {
+
+            switch (convenioAtual) {
                 case 'plano':
                     desconto = 0.20; // 20%
                     textoConvenio = 'Plano Médico';
@@ -1071,15 +1095,15 @@
                     desconto = 0;
                     textoConvenio = 'Sem Convênio';
             }
-            
+
             // Calcular total com desconto
             const totalComDesconto = total * (1 - desconto);
-            
+
             // Atualizar display
             valorTotalElement.textContent = `R$ ${formatarPreco(totalComDesconto)}`;
             convenioAplicadoElement.textContent = textoConvenio;
         }
-        
+
         function formatarPreco(preco) {
             // Converter centavos para reais e formatar
             const valorEmReais = preco / 100;
@@ -1088,23 +1112,23 @@
                 maximumFractionDigits: 2
             });
         }
-        
+
         function zerarTudo() {
             // Zerar todas as quantidades
             [...medicamentos, ...procedimentos, ...ursosHP].forEach(produto => {
                 carrinho[produto.id] = 0;
                 atualizarQuantidade(produto.id);
             });
-            
+
             // Resetar convênio para "Sem Convênio"
             convenioOptions.forEach(opt => opt.classList.remove('active'));
             convenioOptions[0].classList.add('active');
             convenioAtual = 'sem';
-            
+
             // Recalcular total
             calcularTotal();
         }
-        
+
         // Função para alternar entre abas
         function alternarAba(abaId) {
             // Atualizar botões das abas
@@ -1115,7 +1139,7 @@
                     botao.classList.remove('ativo');
                 }
             });
-            
+
             // Atualizar conteúdo das abas
             abaConteudos.forEach(conteudo => {
                 if (conteudo.id === `aba-${abaId}`) {
@@ -1125,11 +1149,11 @@
                 }
             });
         }
-        
+
         // Inicializar
         renderizarProdutos();
         calcularTotal();
-        
+
         // Event listeners para abas
         abaBotoes.forEach(botao => {
             botao.addEventListener('click', () => {
@@ -1137,7 +1161,7 @@
                 alternarAba(abaId);
             });
         });
-        
+
         // Event listeners para convênios
         convenioOptions.forEach(option => {
             option.addEventListener('click', (e) => {
@@ -1150,20 +1174,14 @@
                 }
             });
         });
-        
+
         // Event listeners para combos (SEM ALERTA)
         btnComboPM.addEventListener('click', () => aplicarCombo('pm'));
         btnComboCidadao.addEventListener('click', () => aplicarCombo('cidadao'));
-        
+
         // Event listener para zerar tudo
         btnZerarTudo.addEventListener('click', zerarTudo);
     </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
