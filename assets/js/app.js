@@ -325,5 +325,3 @@ btnComboCidadao.addEventListener("click", () => aplicarCombo("cidadao"));
 
 // Event listener para zerar tudo
 btnZerarTudo.addEventListener("click", zerarTudo);
-
-
