@@ -34,7 +34,7 @@ const combos = {
     items: [
       { id: "m0", quantidade: 2 },
       { id: "m1", quantidade: 5 },
-      { id: "m2", quantidade: 20 },
+      { id: "m2", quantidade: 40 },
       { id: "m3", quantidade: 5 },
     ],
   },
@@ -43,7 +43,7 @@ const combos = {
     items: [
       { id: "m0", quantidade: 2 },
       { id: "m1", quantidade: 5 },
-      { id: "m2", quantidade: 10 },
+      { id: "m2", quantidade: 20 },
       { id: "m3", quantidade: 2 },
     ],
   },
@@ -325,4 +325,5 @@ btnComboCidadao.addEventListener("click", () => aplicarCombo("cidadao"));
 
 // Event listener para zerar tudo
 btnZerarTudo.addEventListener("click", zerarTudo);
+
 
