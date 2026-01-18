@@ -24,7 +24,7 @@ const procedimentos = [
 const ursosHP = [
             { id: 'u0', nome: "CATZINHA", preco: 3000000, imagem: "Icones/CatZinha.png" },
             { id: 'u1', nome: "CAPIZINHA", preco: 3000000, imagem: "Icones/CapZinha.png" },
-            { id: 'u1', nome: "PANDINHO", preco: 3000000, imagem: "Icones/PanDinho.png" },
+            { id: 'u2', nome: "PANDINHO", preco: 3000000, imagem: "Icones/PanDinho.png" },
         ];
 
 // Configuração dos combos
@@ -325,3 +325,4 @@ btnComboCidadao.addEventListener("click", () => aplicarCombo("cidadao"));
 
 // Event listener para zerar tudo
 btnZerarTudo.addEventListener("click", zerarTudo);
+
