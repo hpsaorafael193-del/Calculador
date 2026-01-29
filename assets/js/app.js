@@ -15,9 +15,9 @@ const procedimentos = [
             { id: 'p2', nome: "CONSULTAS", preco: 10000000, imagem: "Icones/Consultas.png" },
             { id: 'p3', nome: "EXAMES BASICOS", preco: 250000, imagem: "Icones/Exames_basicos.png" },
             { id: 'p4', nome: "EXAMES DE IMAGEM", preco: 300000, imagem: "Icones/Exames_imagem.png" },
-            { id: 'p5', nome: "FERT IN VITRO", preco: 15000000, imagem: "Icones/Fiv.png" },
+            { id: 'p5', nome: "FERT IN VITRO", preco: 40000000, imagem: "Icones/Fiv.png" },
             { id: 'p6', nome: "PROCEDIMENTOS", preco: 25000000, imagem: "Icones/Procedimentos.png" },
-            { id: 'p7', nome: "PARTO NORMAL", preco: 30000000, imagem: "Icones/Partos.png" },
+            { id: 'p7', nome: "PARTO NORMAL", preco: 40000000, imagem: "Icones/Partos.png" },
             { id: 'p8', nome: "PARTO HUMANIZADO", preco: 80000000, imagem: "Icones/Partos_H.png" },
         ];
 
@@ -325,3 +325,4 @@ btnComboCidadao.addEventListener("click", () => aplicarCombo("cidadao"));
 
 // Event listener para zerar tudo
 btnZerarTudo.addEventListener("click", zerarTudo);
+
