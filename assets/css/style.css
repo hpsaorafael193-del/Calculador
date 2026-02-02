@@ -6,7 +6,7 @@
 }
 
 body {
-    background: linear-gradient(135deg, #fae8c4 0%, #f1eae1 100%);
+    background: linear-gradient(135deg, #f1eae1 0%, #f1eae1 100%);
     min-height: 100vh;
     padding: 20px;
     color: #491100;
@@ -27,7 +27,7 @@ body {
 
 .header {
     background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
-    color: #f9e2b5;
+    color: #f1eae1;
     padding: 25px 30px;
     text-align: center;
     position: relative;
@@ -67,7 +67,7 @@ h1 {
 .nav-container {
     background: linear-gradient(135deg, #3a0e00 0%, #2a0a00 100%);
     padding: 15px 30px;
-    border-bottom: 3px solid #f9e2b5;
+    border-bottom: 3px solid #f1eae1;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -81,7 +81,7 @@ h1 {
 .nav-btn {
     padding: 12px 25px;
     background: linear-gradient(135deg, rgba(249, 226, 181, 0.15) 0%, rgba(249, 226, 181, 0.05) 100%);
-    color: #f9e2b5;
+    color: #f1eae1;
     border: 2px solid rgba(249, 226, 181, 0.4);
     border-radius: 10px;
     cursor: pointer;
@@ -99,7 +99,7 @@ h1 {
     background: linear-gradient(135deg, rgba(249, 226, 181, 0.3) 0%, rgba(249, 226, 181, 0.2) 100%);
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-    border-color: #f9e2b5;
+    border-color: #f1eae1;
 }
 
 .nav-btn i {
@@ -142,7 +142,7 @@ h2 i {
 
 .convenio-option {
     padding: 15px 20px;
-    background: linear-gradient(135deg, #f9e2b5 0%, #f1eae1 100%);
+    background: linear-gradient(135deg, #f1eae1 0%, #f1eae1 100%);
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -183,7 +183,7 @@ h2 i {
 
 .convenio-option.active {
     background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
-    color: #f9e2b5;
+    color: #f1eae1;
     border-color: #491100;
     box-shadow: 0 8px 20px rgba(73, 17, 0, 0.3), 0 0 0 2px rgba(249, 226, 181, 0.3);
 }
@@ -195,7 +195,7 @@ h2 i {
     right: 5px;
     width: 10px;
     height: 10px;
-    background-color: #f9e2b5;
+    background-color: #f1eae1;
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
@@ -239,7 +239,7 @@ h2 i {
 
 .convenio-option.active .desconto-info {
     background: rgba(249, 226, 181, 0.2);
-    color: #f9e2b5;
+    color: #f1eae1;
 }
 
 .combos-section {
@@ -267,7 +267,7 @@ h2 i {
 .combo-btn {
     padding: 12px 20px;
     background: linear-gradient(135deg, #8d6e63 0%, #6d4c41 100%);
-    color: #f9e2b5;
+    color: #f1eae1;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -318,7 +318,7 @@ h2 i {
 }
 
 .zerar-section {
-    background: linear-gradient(135deg, #f9e2b5 0%, #f1eae1 100%);
+    background: linear-gradient(135deg, #f1eae1 0%, #f1eae1 100%);
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -368,7 +368,7 @@ h2 i {
 .convenio-aplicado {
     font-style: italic;
     background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
-    color: #f9e2b5;
+    color: #f1eae1;
     padding: 8px 15px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -381,7 +381,7 @@ h2 i {
     top: 25px;
     padding: 12px 20px;
     background: linear-gradient(135deg, #6b2a00 0%, #491100 100%);
-    color: #f9e2b5;
+    color: #f1eae1;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -418,7 +418,7 @@ h2 i {
 
 .aba-botao {
     padding: 12px 25px;
-    background: linear-gradient(135deg, #f9e2b5 0%, #f1eae1 100%);
+    background: linear-gradient(135deg, #f1eae1 0%, #f1eae1 100%);
     border: none;
     border-radius: 10px 10px 0 0;
     cursor: pointer;
@@ -442,7 +442,7 @@ h2 i {
 
 .aba-botao.ativo {
     background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
-    color: #f9e2b5;
+    color: #f1eae1;
     box-shadow: 0 4px 10px rgba(73, 17, 0, 0.3);
 }
 
@@ -504,7 +504,7 @@ h2 i {
     margin-bottom: 15px;
     border: 3px solid #e8d5b5;
     box-shadow: 0 4px 8px rgba(73, 17, 0, 0.1);
-    background-color: #f9e2b5;
+    background-color: #f1eae1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -552,7 +552,7 @@ h2 i {
     display: flex;
     align-items: center;
     gap: 10px;
-    background-color: #f9e2b5;
+    background-color: #f1eae1;
     padding: 5px;
     border-radius: 8px;
     border: 1px solid #e8d5b5;
@@ -564,7 +564,7 @@ h2 i {
     border-radius: 50%;
     border: none;
     background: linear-gradient(135deg, #491100, #3a0e00);
-    color: #f9e2b5;
+    color: #f1eae1;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -605,7 +605,7 @@ h2 i {
 .btn-zerar {
     padding: 8px 15px;
     background: linear-gradient(135deg, #6b2a00, #491100);
-    color: #f9e2b5;
+    color: #f1eae1;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -626,7 +626,7 @@ h2 i {
     text-align: center;
     padding: 20px;
     background: linear-gradient(135deg, #491100 0%, #3a0e00 100%);
-    color: #f9e2b5;
+    color: #f1eae1;
     font-size: 0.9rem;
     margin-top: 20px;
 }
