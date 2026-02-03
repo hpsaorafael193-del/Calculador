@@ -29,22 +29,25 @@ const ursosHP = [
 
 // Configuração dos combos
 const combos = {
-  pm: {
-    nome: "COMBO PM",
+  Simples: {
+    nome: "COMBO SIMPLES",
     items: [
       { id: "m0", quantidade: 2 },
       { id: "m1", quantidade: 5 },
-      { id: "m2", quantidade: 40 },
-      { id: "m3", quantidade: 5 },
+      { id: "m2", quantidade: 10 },
+      { id: "m3", quantidade: 2 },
     ],
   },
-  cidadao: {
-    nome: "COMBO CIDADÃO",
+  Completo: {
+    nome: "COMBO COMPLETO",
     items: [
       { id: "m0", quantidade: 2 },
       { id: "m1", quantidade: 5 },
       { id: "m2", quantidade: 20 },
       { id: "m3", quantidade: 2 },
+      { id: "m4", quantidade: 5 },
+      { id: "m5", quantidade: 5 },
+      { id: "m6", quantidade: 10 },
     ],
   },
 };
@@ -53,8 +56,8 @@ const combos = {
 const valorTotalElement = document.querySelector(".valor-total");
 const convenioAplicadoElement = document.querySelector(".convenio-aplicado");
 const btnZerarTudo = document.getElementById("btn-zerar-tudo");
-const btnComboPM = document.getElementById("combo-pm");
-const btnComboCidadao = document.getElementById("combo-cidadao");
+const btnComboSimples = document.getElementById("combo-simples");
+const btnComboCompleto = document.getElementById("combo-completo");
 const abaBotoes = document.querySelectorAll(".aba-botao");
 const abaConteudos = document.querySelectorAll(".aba-conteudo");
 const convenioOptions = document.querySelectorAll(".convenio-option");
@@ -225,10 +228,10 @@ function calcularTotal() {
       desconto = 0.2; // 20%
       textoConvenio = "Plano Médico";
       break;
-    case "parceria-pm":
+    /*case "parceria-pm":
       desconto = 0.1; // 10%
       textoConvenio = "Parceria PM";
-      break;
+      break;*/
     case "parceria":
       desconto = 0.15; // 15%
       textoConvenio = "Parceria";
@@ -320,8 +323,8 @@ convenioOptions.forEach((option) => {
 });
 
 // Event listeners para combos (SEM ALERTA)
-btnComboPM.addEventListener("click", () => aplicarCombo("pm"));
-btnComboCidadao.addEventListener("click", () => aplicarCombo("cidadao"));
+btnComboSimples.addEventListener("click", () => aplicarCombo("Simples"));
+btnComboCompleto.addEventListener("click", () => aplicarCombo("Completo"));
 
 // Event listener para zerar tudo
 btnZerarTudo.addEventListener("click", zerarTudo);
