@@ -27,7 +27,7 @@ const ursosHP = [
             { id: 'u2', nome: "PANDINHO", preco: 3000000, imagem: "Icones/PanDinho.png" },
         ];
 
-// Configuração dos combos
+/* Configuração dos combos
 const combos = {
   Simples: {
     nome: "COMBO SIMPLES",
@@ -50,7 +50,7 @@ const combos = {
       { id: "m6", quantidade: 10 },
     ],
   },
-};
+};*/
 
 // Elementos DOM
 const valorTotalElement = document.querySelector(".valor-total");
