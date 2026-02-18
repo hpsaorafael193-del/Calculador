@@ -323,10 +323,12 @@ convenioOptions.forEach((option) => {
 });
 
 // Event listeners para combos (SEM ALERTA)
-btnComboSimples.addEventListener("click", () => aplicarCombo("Simples"));
+/*btnComboSimples.addEventListener("click", () => aplicarCombo("Simples"));
 btnComboCompleto.addEventListener("click", () => aplicarCombo("Completo"));
+*/
 
 // Event listener para zerar tudo
 btnZerarTudo.addEventListener("click", zerarTudo);
+
 
 
